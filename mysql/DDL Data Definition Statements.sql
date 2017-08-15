@@ -128,7 +128,9 @@ create table adsi.persona_has_casa(
     numero_documento varchar(45),
     matricula varchar(10),
     constraint fk_phc_casa foreign key (matricula) references adsi.casa(matricula),
-    constraint fk_phc_persona foreign key(tipo_documento, numero_documento) references adsi.persona(tipo_documento, numero_documento),
+    constraint fk_phc_persona foreign key(tipo_documento, numero_documento) references adsi.persona(tipo_documento, numero_documento)
+    on update cascade on delete no action
+    ,
     primary key(tipo_documento, numero_documento, matricula),
     index fk_psc_persona_idx (tipo_documento ASC, numero_documento ASC),
     index fk_psc_casa_idx (matricula asc)
@@ -207,6 +209,26 @@ alter table adsi.persona_has_casa drop index fk_psc_persona_idx;
 alter table adsi.persona_has_casa drop foreign key fk_phc_casa;
 alter table adsi.persona_has_casa drop foreign key fk_phc_persona;
 alter table adsi.persona_has_casa drop primary key;
+
+
+-- create index
+
+create index  fk_psc_persona_idx2  on adsi.persona_has_casa (tipo_documento ASC, numero_documento ASC);
+
+-- drop index
+
+drop index fk_psc_persona_idx2 on adsi.persona_has_casa;
+
+-- rename table
+
+rename table adsi.casa to adsi.casa1;
+
+-- truncate table borra la informacion de la base de datos si esta no tiene llaves foraneas hacia otras tablas
+
+truncate table adsi.casa1;
+
+
+
 
 
 
