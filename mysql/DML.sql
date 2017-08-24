@@ -311,18 +311,7 @@ FROM
 ;
 
 select count(*) from  observador_de_proyectos.cliente;
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
+          
 -- subconsultas
         
 SELECT 
@@ -361,8 +350,63 @@ WHERE
 
 
 select * from observador_de_proyectos.aprendiz inner join observador_de_proyectos.cliente using(tipo_documento, numero_documento);
-        
-        
+
+-- insertar una imagen
+-- PARA METER UN CAMPO LONBLOG PARA UNA IMAGEN cambiar la ruta se la variable del archivo my.ini secure-file-priv
+
+create table ejemplodml.imagenes(
+id_imagen int auto_increment primary key,
+imagen longblob
+);
+
+insert into ejemplodml.imagenes(imagen) values (load_file('D:/imagenes/images2.jpg'));
+
+create schema ejemplo3;
+CREATE TABLE ejemplo3.ANIMAL(
+ID_ANIMAL INT NOT NULL AUTO_INCREMENT,
+NOMBRE_ANIMAL VARCHAR(40),
+EDAD INT,
+FECHA_NACIMIENTO DATE,
+TIPO_ANIMAL ENUM ('PERRO', 'GATO'),
+PRIMARY KEY(ID_ANIMAL)
+);
+
+ALTER TABLE ejemplo3.ANIMAL ADD COLUMN FOTO longblob;
+INSERT INTO ejemplo3.ANIMAL (NOMBRE_ANIMAL, TIPO_ANIMAL, FOTO) 
+VALUES ('PILI','PERRO', load_file('D:\imagenes\images2.jpg'));
+
+INSERT INTO ejemplo3.ANIMAL  (ID_ANIMAL,NOMBRE_ANIMAL, TIPO_ANIMAL, FOTO) 
+VALUES ('15','PILI','PERRO', load_file('D:\imagenes\images2.jpg')) ON DUPLICATE KEY UPDATE TIPO_ANIMAL='gato' ;
+
+desc ejemplo3.ANIMAL;
+
+insert into ejemplo3.ANIMAL
+set NOMBRE_ANIMAL='firulais',
+	TIPO_ANIMAL= 'perro';
+    
+
+
+select load_file('C:/Program Files/MySQL/MySQL Workbench 6.3 CE/images/ima/descarga.jpg');
+
+select load_file('C:/imagenes/descarga.jpg');
+
+-- cuando necesito insertar varios registros en una sola sentencia insert
+INSERT INTO EJEMPLO3.ANIMAL (NOMBRE_ANIMAL, TIPO_ANIMAL, FOTO) 
+VALUES ('PILI','PERRO', load_file('C:/imagen/maxresdefault.jpg')),
+('PILI','PERRO', load_file('C:/imagen/maxresdefault.jpg')),
+('PILI','PERRO', load_file('C:/imagen/maxresdefault.jpg')),
+('PILI','PERRO', load_file('C:/imagen/maxresdefault.jpg')),
+('PILI','PERRO', load_file('C:/imagen/maxresdefault.jpg'));
+
+-- replace
+-- replace
+
+REPLACE INTO ejemplo3.ANIMAL (ID_ANIMAL,NOMBRE_ANIMAL, TIPO_ANIMAL, FOTO)
+VALUES (9,'PILI','PERRO', 'iamgen');
+
+
+-- ver el auto commit
+SELECT @@AUTOCOMMIT;
         
         
 
