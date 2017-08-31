@@ -27,3 +27,10 @@ Doble Z mayúscula, basta presionar Shift y dos veces la letra z, esto proboca q
 Igual que :q pero, en este caso, no guarda los cambios, ni alerta de los mismos. Util cuando hemos realizado cambios a un documento que no queremos conservar, peligroso acostumbrarse a usarlo siempre para salir, pues podemos perder los cambios realizados no habrá ningún tipo de alerta
 :wq
 Graba el archivo y sale del editor, a diferencia de :x, :wq, graba el archivo aún cuando no se hubieran realizado cambios al mismo
+
+
+COMMANDOS
+ls muestr el conenido de u directorio
+pwd muestra la ruta donde me encuentro
+apg-get update actualiza el sistema operativo
+apg-get upgrade actualiza las rutas

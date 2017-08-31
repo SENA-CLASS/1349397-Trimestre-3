@@ -1,0 +1,10 @@
+# ubuntu server con updates
+# docker build -t "hulkike/ubuntu:dockerfile" .
+
+FROM hulkike/ubuntu:16.04.3
+
+RUN apt-get upgrade
+
+RUN apt-get update && apt-get install
+
+RUN apt-get install oracle-java8-installer

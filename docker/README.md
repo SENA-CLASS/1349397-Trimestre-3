@@ -18,5 +18,31 @@ docker kill [id del contenedor] -> mata el proceso de ese contenedor
 contenedores
 docker rm -> borra un contenedor
 docker create [opcionres] mirar la pagina
+docker run [opciones] mirar la pagina
 docker start [nombre contenedor o id contenedot]-> sirve para ejecutar el contenedor
 docker stop [nombre contenedor o id contenedor]-> sirve para parar un contenedor
+
+
+para los puertos se habren con el -p
+docker create --name some-mysql -e MYSQL_ROOT_PASSWORD=123456789 -p 5306:3306 mysql:5.7.18
+docker run -p 5306:3306 --name some-mysql -e MYSQL_ROOT_PASSWORD=123456789 -d mysql:5.7.18
+
+para ver los puertos que esta usando un contenedor
+docker port [nombre del conenedor or id]
+
+para conectarme a un servidor uso el comando
+docker exec -it [nombre contenedor] bash
+
+
+docker commit crear una nueva imagen
+docker push sube una imagen a un repositorio en linea
+
+dockerfile
+crear una imagen a partir de otra
+docker build -t "simple_flask:dockerfile" .
+
+
+
+
+
+
