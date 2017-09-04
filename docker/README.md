@@ -24,7 +24,7 @@ docker stop [nombre contenedor o id contenedor]-> sirve para parar un contenedor
 
 
 para los puertos se habren con el -p
-docker create --name some-mysql -e MYSQL_ROOT_PASSWORD=123456789 -p 5306:3306 mysql:5.7.18
+docker create --name some-mysql -e MYSQL_ROOT_PASSWORD=123456789  mysql:5.7.18 
 docker run -p 5306:3306 --name some-mysql -e MYSQL_ROOT_PASSWORD=123456789 -d mysql:5.7.18
 
 para ver los puertos que esta usando un contenedor
