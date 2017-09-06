@@ -42,6 +42,10 @@ crear una imagen a partir de otra
 docker build -t "simple_flask:dockerfile" .
 
 
+actualizar un contenedor se usa el comando update
+docker update --restart always [nombre contenedor] // con esto hago que el ocntenedor suba de forma automatica
+
+
 
 
 
