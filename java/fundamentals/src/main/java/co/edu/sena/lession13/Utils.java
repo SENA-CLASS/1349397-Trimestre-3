@@ -2,16 +2,22 @@ package co.edu.sena.lession13;
 
 public class Utils {
 
-    public void doThis(){
+    public void doThis() throws UnsupportedOperationException {
         System.out.println("llegue al metodo doTHis");
-        doThat();
-        System.out.println("finaliza el metodo doThis y vuelve al metodo que lo llamo");
+
+        //throw new UnsupportedOperationException("no se que sera este error");
+
+        //System.out.println("finaliza el metodo doThis y vuelve al metodo que lo llamo");
 
     }
 
-    public void doThat(){
+    public void doThat() throws UnsupportedOperationException, ArithmeticException{
         System.out.println("llegue al metodo doThat");
-        throw new UnsupportedOperationException("no se que sera este error");
+
+        int a= 1/0;
+
+            //throw new UnsupportedOperationException("no se que sera este error");
+
         //System.out.println("termino el metodo doThat");
 
     }
