@@ -41,3 +41,11 @@ console.log('El valor de x es ' + x); // El valor de x es undefined
 //console.log('El valor de y es ' + y); // Uncaught ReferenceError: y no está definida
 let y;
 
+var b;
+if(!b){
+    console.log('verdadero');
+}else{
+    console.log('falso');
+}
+
+
