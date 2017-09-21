@@ -1,6 +1,9 @@
 package co.edu.sena.programming.lesson04;
 
 public class Ejemplo01 {
+
+    public static int aa;
+
     public static void main(String[] args) {
         Foo2 objeto = new Baar2();
         System.out.println(objeto);
@@ -9,6 +12,9 @@ public class Ejemplo01 {
         objeto.reportSum();
 
         objeto.toString();
+
+        aa= 3;
+
     }
 
 }

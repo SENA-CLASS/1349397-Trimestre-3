@@ -10,6 +10,13 @@ public class Ejemplo02 {
         a.setSexo('M');
 
         imprimirEmpleado(a);
+        imprimirEmpleado(a);
+
+        Ejemplo02 aas= new Ejemplo02();
+        aas.comer();
+        imprimirEmpleado(a);
+
+
 
 
     }
@@ -32,6 +39,11 @@ public class Ejemplo02 {
             System.out.println(at.getSexo());
 
         }
+
+    }
+
+    public void comer(){
+
 
     }
 
